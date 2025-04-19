@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Malcolm & Fraser's 2025 Easter Egg Hunt - Puzzle 2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <script type="text/javascript">
+      function checkAnswer() {
+        if (document.getElementById("flopsy-colour").value != "green") {
+          wrongAnswer();
+          return;
+        }
+        if (document.getElementById("flopsy-location").value != "forest") {
+          wrongAnswer();
+          return;
+        }
+        if (document.getElementById("mopsy-colour").value != "red") {
+          wrongAnswer();
+          return;
+        }
+        if (document.getElementById("mopsy-location").value != "garden") {
+          wrongAnswer();
+          return;
+        }
+        if (document.getElementById("cottontail-colour").value != "blue") {
+          wrongAnswer();
+          return;
+        }
+        if (document.getElementById("cottontail-location").value != "attic") {
+          wrongAnswer();
+          return;
+        }
+        if (document.getElementById("thumper-colour").value != "yellow") {
+          wrongAnswer();
+          return;
+        }
+        if (document.getElementById("thumper-location").value != "kitchen") {
+          wrongAnswer();
+          return;
+        }
+        rightAnswer();
+      }
+
+      function wrongAnswer() {
+        console.log("wrong answer");
+        const el1 = document.getElementById("wrongAnswer");
+        const el2 = document.getElementById("rightAnswer");
+        const el3 = document.getElementById("rightAnswerImg");
+
+        el1.classList.add("visible");
+        el1.classList.remove("invisible");
+        el2.classList.add("invisible");
+        el2.classList.remove("visible");
+        el3.classList.add("invisible");
+        el3.classList.remove("visible");
+      }
+
+      function rightAnswer() {
+        console.log("right answer");
+        const el1 = document.getElementById("wrongAnswer");
+        const el2 = document.getElementById("rightAnswer");
+        const el3 = document.getElementById("rightAnswerImg");
+
+        el1.classList.add("invisible");
+        el1.classList.remove("visible");
+        el2.classList.add("visible");
+        el2.classList.remove("invisible");
+        el3.classList.add("visible");
+        el3.classList.remove("invisible");
+      }
+    </script>
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <form class="container">
+      <div class="row mt-4">
+        <h1 class="text-center">Malcolm & Fraser's 2025 Easter Egg Hunt</h1>
+      </div>
+      <div class="row mt-3">
+        <h6>Which bunny found which colour egg, in which location?</h6>
+      </div>
+      <div class="row mt-3">
+        <ul class="list-group col">
+          <li class="list-group-item">The bunny who found the red egg wasn’t in the forest or the attic.</li>
+          <li class="list-group-item">Flopsy didn’t go to the kitchen, but did not find the yellow egg either.</li>
+          <li class="list-group-item">The blue egg was found in the attic.</li>
+          <li class="list-group-item">The bunny who went to the forest found the green egg.</li>
+          <li class="list-group-item">Mopsy went to the garden.</li>
+          <li class="list-group-item">Thumper found the yellow egg.</li>
+          <li class="list-group-item">The bunny who went to the kitchen is not Cottontail.</li>
+          <li class="list-group-item">The green egg was not found by Cottontail.</li>
+        </ul>
+      </div>
+      <table class="row table mt-5 col">
+        <tbody>
+          <tr class="table-dark">
+            <th scope="col">Bunny</th>
+            <th scope="col">Egg Colour</th>
+            <th scope="col">Location</th>
+          </tr>
+          <tr>
+            <td scope="col">Flopsy</td>
+            <td scope="col">
+              <select id="flopsy-colour">
+                <option value="">--Choose--</option>
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+                <option value="yellow">Yellow</option>
+              </select>
+            </td>
+            <td scope="col">
+              <select id="flopsy-location">
+                <option value="">--Choose--</option>
+                <option value="garden">Garden</option>
+                <option value="forest">Forest</option>
+                <option value="kitchen">Kitchen</option>
+                <option value="attic">Attic</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td scope="col">Mopsy</td>
+            <td scope="col">
+              <select id="mopsy-colour">
+                <option value="">--Choose--</option>
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+                <option value="yellow">Yellow</option>
+              </select>
+            </td>
+            <td scope="col">
+              <select id="mopsy-location">
+                <option value="">--Choose--</option>
+                <option value="garden">Garden</option>
+                <option value="forest">Forest</option>
+                <option value="kitchen">Kitchen</option>
+                <option value="attic">Attic</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td scope="col">Cottontail</td>
+            <td scope="col">
+              <select id="cottontail-colour">
+                <option value="">--Choose--</option>
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+                <option value="yellow">Yellow</option>
+              </select>
+            </td>
+            <td scope="col">
+              <select id="cottontail-location">
+                <option value="">--Choose--</option>
+                <option value="garden">Garden</option>
+                <option value="forest">Forest</option>
+                <option value="kitchen">Kitchen</option>
+                <option value="attic">Attic</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td scope="col">Thumper</td>
+            <td scope="col">
+              <select id="thumper-colour">
+                <option value="">--Choose--</option>
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+                <option value="yellow">Yellow</option>
+              </select>
+            </td>
+            <td scope="col">
+              <select id="thumper-location">
+                <option value="">--Choose--</option>
+                <option value="garden">Garden</option>
+                <option value="forest">Forest</option>
+                <option value="kitchen">Kitchen</option>
+                <option value="attic">Attic</option>
+              </select>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="row mt-4">
+        <button type="button" class="btn btn-primary col-6 offset-3" onclick="checkAnswer()">Check Answer</button>
+      </div>
+      <div class="row mt-2">
+        <h6 id="wrongAnswer" class="text-danger text-center invisible">Nope, try again!</h6>
+        <h6 id="rightAnswer" class="text-success text-center invisible">Correct!</h6>
+        <img id="rightAnswerImg" src="location2.jpg" style="width:100%" class="invisible" />
+      </div>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+  </body>
+</html>
